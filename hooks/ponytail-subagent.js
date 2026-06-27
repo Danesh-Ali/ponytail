@@ -16,8 +16,7 @@ if (!mode || mode === 'off') {
 }
 
 try {
-const summary = `PONYTAIL:${mode.toUpperCase()} ACTIVE. Follow lazy-senior-dev rules from SessionStart context.`;
-writeHookOutput('SubagentStart', mode, summary);
+writeHookOutput('SubagentStart', mode, getPonytailInstructions(mode));
 } catch (e) {
   // Silent fail — a stdout error at hook exit must not surface as a hook failure.
 }
